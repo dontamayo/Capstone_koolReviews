@@ -2,4 +2,6 @@
 
 
 1. Commands
-* npm run server 
+* npm run server
+* npm run dev
+* npm start
