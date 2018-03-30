@@ -1,10 +1,10 @@
 import React from 'react';
-//import
+import HomeContainer from '../../containers/home_container'
 
 const Home = (props) => {
   return (
     <div>
-      Home
+      <HomeContainer/>
     </div>
   );
 };

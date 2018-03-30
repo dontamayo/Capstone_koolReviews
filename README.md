@@ -12,13 +12,29 @@
 
 import React from 'react';
 
-class  extends Component {
-  render(){
+const        = () => {
     return(
       <div>
 
       </div>
     );
-  }
-}
+  };
+
 export default ;
+
+
+//===========//
+
+import React, { Component } from 'react';
+
+class HomeContainer extends Component {
+    render() {
+        return (
+            <div className="class-name">
+                content
+            </div>
+        );
+    }
+}
+
+export default HomeContainer;
