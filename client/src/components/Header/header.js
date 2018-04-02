@@ -33,7 +33,7 @@ class Header extends Component {
                 />
 
                 <Link to="/" className="logo">
-                        Kool Reviews 2
+                        Kool Reviews
                 </Link>
 
             </header>

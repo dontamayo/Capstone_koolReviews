@@ -28,6 +28,7 @@ class Login extends Component {
 
     submitForm = (e) =>{
         e.preventDefault();
+        console.log(this.state) //====================I CAN DELETE THIS AFTER==//
         this.props.dispatch(loginUser(this.state))
     }
 
