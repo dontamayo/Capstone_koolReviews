@@ -51,6 +51,7 @@ userSchema.pre('save',function(next){
     next()
   }
 })
+//==========this happens after registering new user===================//
 userSchema.methods.comparePassword = function(candidatePassword,cb){
   bcrypt.compare(candidatePassword,this.password, function(err,isMatch){
     if(err) return cb(err);
@@ -58,6 +59,7 @@ userSchema.methods.comparePassword = function(candidatePassword,cb){
   })
 
 }
+
 //===========generateToken for the user==================//
 userSchema.methods.generateToken = function(cb){
     var user = this;

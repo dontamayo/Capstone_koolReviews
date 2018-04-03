@@ -105,6 +105,7 @@ app.post('/api/book', (req,res) => {
 
 })
 
+//============ Register new user =====================//
 app.post('/api/register',(req,res) => {
   const user = new User(req.body);
 
@@ -117,6 +118,7 @@ app.post('/api/register',(req,res) => {
   })
 })
 
+//==============login with password logic===================//
 app.post('/api/login',(req,res)=>{
   User.findOne({'email':req.body.email},(err,user)=>{
     if(!user) return res.json({isAuth:false,message:'Auth failed, email not found'})
