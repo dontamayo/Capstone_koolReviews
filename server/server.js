@@ -15,6 +15,12 @@ const { auth } = require('./middleware/auth');
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+
+//=======this is used after buildinhg the package for development========//
+app.use(express.static('client/build'))
+
+
+
 //creating routes
 
 //==============GET=======================//
@@ -165,7 +171,13 @@ app.delete('/api/delete_book', (req,res)=>{
   })
 })
 
-
+//=========for production in heroku ==============//
+if(process.env.NODE_ENV === 'production'){
+  const path = require('path');
+  app.get('/*',(req,res)=> {
+    res.sendfile(path.resolve(_dirname,'../client','build','index.html'))
+  })
+}
 
 const port = process.env.PORT || 3001;
 app.listen(port,()=> {
