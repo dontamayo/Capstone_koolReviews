@@ -1,6 +1,8 @@
 export default function(state={},action){
+  //console.log(action)
     switch(action.type){
         case 'USER_LOGIN':
+        //console.log(action.payload)
             return {...state,login:action.payload}
         case 'USER_AUTH':
             return {...state,login:action.payload}

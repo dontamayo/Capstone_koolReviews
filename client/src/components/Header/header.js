@@ -33,7 +33,8 @@ class Header extends Component {
                 />
 
                 <Link to="/" className="logo">
-                        Kool Reviews
+                        Bookool <img src='https://thumbs.gfycat.com/FlusteredMajorBoto-max-1mb.gif' width='40px' alt='books'/>
+
                 </Link>
 
             </header>

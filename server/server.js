@@ -62,6 +62,7 @@ app.get('/api/books', (req,res) => {
   })
 })
 
+//===============this code is the one that doesnt work on getting reviewer server,user routes 2 =====//
 app.get('/api/getReviewer', (req,res)=>{
   let id = req.query.id;
 
@@ -74,6 +75,7 @@ app.get('/api/getReviewer', (req,res)=>{
   }
 })
 
+//=======getting all users ===================//
 app.get('/api/users',(req,res)=>{
   User.find({},(err,users)=>{
     if(err) return res.status(400).send(err);
@@ -129,9 +131,11 @@ app.post('/api/login',(req,res)=>{
         message:'Wrong password'
       });
 
+//============generateToken after validating the login and password==== line 75, server.js =======//
+//======='xxxxx' / 'auth'=========================//
       user.generateToken((err,user)=>{
         if(err) return res.status(400).send(err);
-        res.cookie('xxxxxx', user.token).json({
+        res.cookie('auth', user.token).json({
           isAuth:true,
           id:user._id,
           email:user.email

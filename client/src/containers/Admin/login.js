@@ -22,13 +22,14 @@ class Login extends Component {
     componentWillReceiveProps(nextProps){
         if(nextProps.user.login.isAuth){
             this.props.history.push('/user')
+            //console.log('logging in ')
         }
     }
 
 
     submitForm = (e) =>{
         e.preventDefault();
-        console.log(this.state) //====================I CAN DELETE THIS AFTER==//
+        //console.log(this.state) //====================I CAN DELETE THIS AFTER==//
         this.props.dispatch(loginUser(this.state))
     }
 
@@ -36,7 +37,7 @@ class Login extends Component {
         let user = this.props.user;
         return (
             <div className="rl_container">
-                <form onSubmit={this.submitForm}>
+                <form  method='get' onSubmit={this.submitForm}>
                     <h2>Log in here</h2>
 
                     <div className="form_element">

@@ -32,7 +32,7 @@ class UserPosts extends Component {
         let user = this.props.user;
         return (
             <div className="user_posts">
-                <h4>Your reviews:</h4>
+                <h4>Your Reviews:</h4>
                 <table>
                     <thead>
                         <tr>

@@ -15,7 +15,7 @@ export default function(ComposedClass,reload){
 
         componentWillReceiveProps(nextProps){
             this.setState({loading:false})
-
+            //console.log(nextProps)
             if(!nextProps.user.login.isAuth){
                 if(reload){
                     this.props.history.push('/login');
@@ -29,8 +29,7 @@ export default function(ComposedClass,reload){
 
         render(){
             if(this.state.loading){
-                return(
-                <div className="loader">Loading...</div>);
+                return <div className="loader">Loading...</div>;
             }
             return(
                 <ComposedClass {...this.props} user={this.props.user}/>
